@@ -1,9 +1,16 @@
 # Security Report
 
+<<<<<<< Updated upstream
 Run : 10
 Branch : main
 Commit : 62c4f1130d97cef4ba467e24d117d2a13741a2dd
 Date : Mon Oct 12 01:39:24 UTC 2026
+=======
+Run : 5
+Branch : main
+Commit : 62c4f1130d97cef4ba467e24d117d2a13741a2dd
+Date : Mon Oct 12 02:01:29 UTC 2026
+>>>>>>> Stashed changes
 
 Fuzzing
 
@@ -37,7 +44,7 @@ THE LAST SIGNAL - RED TEAM FILE INTEGRITY TEST V2
 === RED TEAM CLONE ===
 Repository : https://github.com/vedafactor/The-last-signal-.git
 SHA        : 62c4f1130d97cef4ba467e24d117d2a13741a2dd
-[CMD] git clone --no-tags --filter=blob:none https://github.com/vedafactor/The-last-signal-.git /tmp/security_red_team_i7pznvie/repository
+[CMD] git clone --no-tags --filter=blob:none https://github.com/vedafactor/The-last-signal-.git /tmp/security_red_team_cv0vuf8j/repository
 [CMD] git fetch --depth=1 origin 62c4f1130d97cef4ba467e24d117d2a13741a2dd
 [CMD] git checkout --detach 62c4f1130d97cef4ba467e24d117d2a13741a2dd
 [CMD] git rev-parse HEAD
@@ -147,7 +154,7 @@ Git integrity: FAIL
 [WARN] World-executable script: server_rust/vendor/sqlx/tests/mssql/entrypoint.sh
 [WARN] World-executable script: server_rust/vendor/sqlx/tests/mssql/configure-db.sh
 
-Files/objects inspected: 10432
+Files/objects inspected: 10425
 [PASS] No dangerous filesystem permissions detected.
 
 ## Git Security Test
@@ -41431,79 +41438,13 @@ Target: http://127.0.0.1:5000
 # Server logs
 
 ```text
-[1m[33mwarning[0m[1m: unused imports: `debug` and `info`[0m
- [1m[94m--> [0msrc/gameplay/tresor.rs:5:11
-  [1m[94m|[0m
-[1m[94m5[0m [1m[94m|[0m use log::{debug, error, info};
-  [1m[94m|[0m           [1m[33m^^^^^[0m         [1m[33m^^^^[0m
-  [1m[94m|[0m
-  [1m[94m= [0m[1mnote[0m: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
-[1m[33mwarning[0m[1m: fields `user_id` and `password_hash` are never read[0m
-  [1m[94m--> [0msrc/network/handler.rs:41:5
-   [1m[94m|[0m
-[1m[94m40[0m [1m[94m|[0m pub struct User {
-   [1m[94m|[0m            [1m[94m----[0m [1m[94mfields in this struct[0m
-[1m[94m41[0m [1m[94m|[0m     user_id: String,
-   [1m[94m|[0m     [1m[33m^^^^^^^[0m
-[1m[94m42[0m [1m[94m|[0m     password_hash: String,
-   [1m[94m|[0m     [1m[33m^^^^^^^^^^^^^[0m
-   [1m[94m|[0m
-   [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
-
-[1m[33mwarning[0m[1m: constant `PO` is never used[0m
- [1m[94m--> [0msrc/gameplay/tresor.rs:8:7
-  [1m[94m|[0m
-[1m[94m8[0m [1m[94m|[0m const PO: u32 = PA * 10;
-  [1m[94m|[0m       [1m[33m^^[0m
-
-[1m[33mwarning[0m[1m: constant `PP` is never used[0m
- [1m[94m--> [0msrc/gameplay/tresor.rs:9:7
-  [1m[94m|[0m
-[1m[94m9[0m [1m[94m|[0m const PP: u32 = PO * 10;
-  [1m[94m|[0m       [1m[33m^^[0m
-
-[1m[33mwarning[0m: `the-last-signal-server` (lib) generated 4 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 1 suggestion)
-[1m[33mwarning[0m[1m: unused import: `sqlx::Row`[0m
- [1m[94m--> [0msrc/main.rs:6:5
-  [1m[94m|[0m
-[1m[94m6[0m [1m[94m|[0m use sqlx::Row;
-  [1m[94m|[0m     [1m[33m^^^^^^^^^[0m
-  [1m[94m|[0m
-  [1m[94m= [0m[1mnote[0m: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
-[1m[33mwarning[0m[1m: unused imports: `stuff_manager::Inventaire` and `tresor::Tresor`[0m
-  [1m[94m--> [0msrc/main.rs:10:5
-   [1m[94m|[0m
-[1m[94m10[0m [1m[94m|[0m     stuff_manager::Inventaire,
-   [1m[94m|[0m     [1m[33m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-[1m[94m11[0m [1m[94m|[0m     tresor::Tresor,
-   [1m[94m|[0m     [1m[33m^^^^^^^^^^^^^^[0m
-
-[1m[33mwarning[0m[1m: constant `NOMBRE_REPETITIONS` is never used[0m
-  [1m[94m--> [0msrc/main.rs:16:7
-   [1m[94m|[0m
-[1m[94m16[0m [1m[94m|[0m const NOMBRE_REPETITIONS: u32 = 100;
-   [1m[94m|[0m       [1m[33m^^^^^^^^^^^^^^^^^^[0m
-   [1m[94m|[0m
-   [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
-
-[1m[33mwarning[0m[1m: constant `NOMBRE_CONFIGURATIONS` is never used[0m
-  [1m[94m--> [0msrc/main.rs:17:7
-   [1m[94m|[0m
-[1m[94m17[0m [1m[94m|[0m const NOMBRE_CONFIGURATIONS: u32 = 12 * 2 * 2; // niveaux × admin × militaire
-   [1m[94m|[0m       [1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
-
-[1m[33mwarning[0m: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
-[1m[92m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 0.04s
-[1m[92m     Running[0m `target/debug/the-last-signal-server`
-Error: "Clé Fernet invalide"
+Aucun log disponible.
 ```
 
 
 # Security report
 
-**Run:** 10
+**Run:** 5
 
 ## Tests
 
@@ -41527,7 +41468,7 @@ Error: "Clé Fernet invalide"
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.8
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-10-12 01:40:58.603367+00:00
+Run started:2026-10-12 02:02:23.161152+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -44051,7 +43992,7 @@ It will be compatible before version 2.0.0.
 
   Using [1mopen-source vulnerability database[0m
 [1m  Found and scanned 142 packages[0m
-  Timestamp [1m2026-10-12 01:41:04[0m
+  Timestamp [1m2026-10-12 02:02:29[0m
 [1m  2[0m[1m vulnerabilities reported[0m
 [1m  0[0m[1m vulnerabilities ignored[0m
 
@@ -44188,9 +44129,9 @@ Ran 294 rules on 91 files: 3 findings.
     ○ ░
     ░    gitleaks
 
-[90m1:47AM[0m [32mINF[0m [1m3726 commits scanned.[0m
-[90m1:47AM[0m [32mINF[0m [1mscanned ~39845633017 bytes (39.85 GB) in 6m32s[0m
-[90m1:47AM[0m [32mINF[0m [1mno leaks found[0m
+[90m2:09AM[0m [32mINF[0m [1m3728 commits scanned.[0m
+[90m2:09AM[0m [32mINF[0m [1mscanned ~39849888218 bytes (39.85 GB) in 6m31s[0m
+[90m2:09AM[0m [32mINF[0m [1mno leaks found[0m
 
 ## Python Licenses
  Name                                      Version    License                                            
@@ -44334,7 +44275,7 @@ Ran 294 rules on 91 files: 3 findings.
  zipp                                      4.1.1      MIT                                                
 
 ## Cargo Deny
-2026-10-12 01:47:46 [[33mWARN[0m] unable to find a config path, falling back to default config[0m
+2026-10-12 02:09:10 [[33mWARN[0m] unable to find a config path, falling back to default config[0m
 [0m[1m[38;5;9merror[rejected][0m[1m: failed to satisfy license requirements[0m
    [0m[36m┌─[0m /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/adler2/Cargo.toml:38:12
    [0m[36m│[0m
